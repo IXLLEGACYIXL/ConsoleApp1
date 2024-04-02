@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 var x = new T<int>();
+NexYamlSerializerRegistry.Init();
 var options = new YamlSerializerOptions()
 {
     SecureMode = true
