@@ -17,10 +17,10 @@ var options = new YamlSerializerOptions()
 {
     SecureMode = true
 };
-var s = YamlSerializer.SerializeToString(x);
-var d = YamlSerializer.Deserialize<T<int>>(s);
-var throws = YamlSerializer.SerializeToString<Bob>(d,options);
-var throws2 = YamlSerializer.Deserialize<T<int>>(throws);
+var s = YamlSerializer.SerializeToString(x); // insecure serialization
+var d = YamlSerializer.Deserialize<T<int>>(s); // insecure deserialize
+var throws = YamlSerializer.SerializeToString<Bob>(d,options); // secure deserialzie so no interfaces allowed in the chain, throws
+var throws2 = YamlSerializer.Deserialize<T<int>>(throws); // secure deserialize so no itnerfaces and such allowed, throws
 namespace Homp
 {
     interface Bob
